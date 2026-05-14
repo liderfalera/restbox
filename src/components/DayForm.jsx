@@ -125,9 +125,6 @@ export default function DayForm({ initial, prods, ings, cfg, onSave, onCancel, i
                     onChange={v=>setOp(oc.id,v)}/>
                 ))}
               </G2>
-              <div style={{ fontSize:11, color:"#64748b", background:"#f1f5f9", borderRadius:8, padding:"5px 10px", marginTop:4 }}>
-                🏠 Provisión fijos: S/{fmt(tots.fpd)}/día (calculada automáticamente)
-              </div>
             </div>
           </div>
 
@@ -152,9 +149,6 @@ export default function DayForm({ initial, prods, ings, cfg, onSave, onCancel, i
             <div style={{ borderTop:"1px dashed #cbd5e1", margin:"8px 0" }}/>
             <div style={{ display:"flex", justifyContent:"space-between", fontSize:12, color:"#64748b", padding:"2px 0" }}>
               <span>💸 Gastos operativos</span><span>− S/{fmt(tots.opTotal)}</span>
-            </div>
-            <div style={{ display:"flex", justifyContent:"space-between", fontSize:12, color:"#64748b", padding:"2px 0" }}>
-              <span>🏠 Fijos del día</span><span>− S/{fmt(tots.fpd)}</span>
             </div>
             <div style={{ display:"flex", justifyContent:"space-between", fontWeight:900, fontSize:20, marginTop:10, paddingTop:10, borderTop:`1px solid ${col.br}40`, color:col.bg }}>
               <span>💰 Ganancia neta</span><span>S/ {fmt(tots.net)}</span>

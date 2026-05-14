@@ -23,11 +23,8 @@ export function uCost(prod, ings) {
 
 // ── Totales del día ───────────────────────────────────────────
 export function dTotals(rec, prods, ings, cfg) {
-  const totalFixed = (cfg.fixedCosts || []).reduce((s, f) => s + n(f.amount), 0);
-  const fpd = totalFixed / (n(cfg.diasMes) || 1);
-
   if (rec.status === "closed")
-    return { net: 0, rev: 0, mat: 0, mermaTotal: 0, byP: {}, closed: true, fpd, opTotal: 0, other: fpd, total: fpd };
+    return { net: 0, rev: 0, mat: 0, mermaTotal: 0, byP: {}, closed: true, opTotal: 0, total: 0 };
 
   let rev = 0, mat = 0, mermaTotal = 0;
   const byP = {};
@@ -43,11 +40,11 @@ export function dTotals(rec, prods, ings, cfg) {
       pc = (e.ingredientCost !== undefined && e.ingredientCost !== "")
         ? n(e.ingredientCost)
         : sold * uc;
-      pm = Math.max(0, n(e.prepared) - sold) * uc;   // merma en S/ (unidades sobrantes × costo)
+      pm = Math.max(0, n(e.prepared) - sold) * uc;
     } else {
       pr = n(e.income);
       pc = n(e.ingredientCost);
-      pm = n(e.merma);                                // merma ingresada directamente en S/
+      pm = n(e.merma);
     }
 
     byP[p.id] = { rev: pr, cost: pc, merma: pm, margin: pr - pc - pm };
@@ -57,7 +54,6 @@ export function dTotals(rec, prods, ings, cfg) {
   const opTotal = (cfg.opCosts || []).reduce(
     (s, oc) => s + n(rec.opCosts?.[oc.id] ?? oc.defaultAmount), 0
   );
-  const other = opTotal + fpd;
 
-  return { byP, rev, mat, mermaTotal, fpd, opTotal, other, total: mat + mermaTotal + other, net: rev - mat - mermaTotal - other };
+  return { byP, rev, mat, mermaTotal, opTotal, total: mat + mermaTotal + opTotal, net: rev - mat - mermaTotal - opTotal };
 }

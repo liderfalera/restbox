@@ -160,17 +160,6 @@ export function DayDetail({
 								</div>
 							);
 						})}
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "space-between",
-								fontSize: 12,
-								color: "#64748b",
-								padding: "2px 0",
-							}}>
-							<span>🏠 Provisión fijos</span>
-							<span>S/{fmt(tots.fpd)}</span>
-						</div>
 						{tots.mermaTotal > 0 && (
 							<div
 								style={{

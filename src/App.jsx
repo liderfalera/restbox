@@ -7,7 +7,6 @@ import {
 	Modal,
 	Btn,
 	Field,
-	G2,
 	CardHead,
 } from "./components/ui.jsx";
 import { CostForm, IngForm, ProdForm } from "./components/forms.jsx";
@@ -79,12 +78,6 @@ export default function App() {
 		setTimeout(() => setToast(""), 2500);
 	};
 
-	const fixedDay = useMemo(
-		() =>
-			(cfg.fixedCosts || []).reduce((s, f) => s + n(f.amount), 0) /
-			(n(cfg.diasMes) || 1),
-		[cfg],
-	);
 
 	// Helpers para listas dinámicas en cfg
 	const updList = (key, item) =>
@@ -333,18 +326,11 @@ export default function App() {
 								color="gray"
 							/>
 							<div style={{ padding: 14 }}>
-								<G2>
-									<Field
-										label="📆 Días abiertos/mes"
-										value={cfg.diasMes}
-										onChange={(v) => setCfg((c) => ({ ...c, diasMes: n(v) }))}
-									/>
-									<Field
-										label="🎯 Meta ganancia/día (S/)"
-										value={cfg.objetivo}
-										onChange={(v) => setCfg((c) => ({ ...c, objetivo: n(v) }))}
-									/>
-								</G2>
+								<Field
+									label="🎯 Meta ganancia operativa/día (S/)"
+									value={cfg.objetivo}
+									onChange={(v) => setCfg((c) => ({ ...c, objetivo: n(v) }))}
+								/>
 							</div>
 						</div>
 
