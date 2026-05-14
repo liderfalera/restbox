@@ -5,7 +5,7 @@ export const PCOLORS = ["#16a34a", "#ea580c", "#2563eb", "#7c3aed", "#db2777", "
 export const UNITS = ["kg", "litro", "unidad", "paquete", "g", "atado", "botella", "porción", "otro"];
 
 export const D_CFG = {
-  diasMes: 26,
+  diasMes: 24,
   objetivo: 100,
   fixedCosts: [],
   opCosts: [],
