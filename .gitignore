@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.env
+ventas_abril2026.json
+config_inicial.json
