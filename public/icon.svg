@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Fondo -->
+  <rect width="512" height="512" rx="112" fill="#1e293b"/>
+  <!-- Tines del tenedor -->
+  <line x1="208" y1="80" x2="208" y2="208" stroke="white" stroke-width="36" stroke-linecap="round"/>
+  <line x1="256" y1="80" x2="256" y2="240" stroke="white" stroke-width="36" stroke-linecap="round"/>
+  <line x1="304" y1="80" x2="304" y2="208" stroke="white" stroke-width="36" stroke-linecap="round"/>
+  <!-- Arco del tenedor -->
+  <path d="M208 208 C208 270 304 270 304 208" stroke="white" stroke-width="36" fill="none" stroke-linecap="round"/>
+  <!-- Mango del tenedor -->
+  <line x1="256" y1="258" x2="256" y2="310" stroke="white" stroke-width="40" stroke-linecap="round"/>
+  <!-- Cuerpo de la caja -->
+  <rect x="96" y="310" width="320" height="200" rx="24" stroke="white" stroke-width="28" fill="none"/>
+  <!-- Línea de tapa -->
+  <line x1="96" y1="374" x2="416" y2="374" stroke="white" stroke-width="22"/>
+</svg>
