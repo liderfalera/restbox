@@ -420,7 +420,7 @@ export default function App() {
 									{fmt(
 										(cfg.fixedCosts || []).reduce((s, f) => s + n(f.amount), 0),
 									)}
-									/mes · S/{fmt(fixedDay)}/día
+									/mes
 								</div>
 							</div>
 						</div>
